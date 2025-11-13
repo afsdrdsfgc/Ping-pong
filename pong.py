@@ -53,9 +53,9 @@ FPS = 60
 ball_speed_x = 3 
 ball_speed_y = 3
 
-left_paddle = Player('paddle.png', 30, 200, True)
-right_paddle = Player('paddle.png', 520, 200, False)
-ball = GameSprite('ball.png', 200, 200)
+left_paddle = Player('paddle.jpg', 30, 200, True)
+right_paddle = Player('paddle.jpg', 520, 200, False)
+ball = GameSprite('ball.jpg', 200, 200)
 
 font.init()
 style = font.Font(None, 35)
