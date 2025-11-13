@@ -57,6 +57,10 @@ left_paddle = Player('paddle.png', 30, 200, True)
 right_paddle = Player('paddle.png', 520, 200, False)
 ball = GameSprite('ball.png', 200, 200)
 
+font.init()
+style = font.Font(None, 35)
+lose1 = style.render('Left Player Loses!', True, (180, 0, 0))
+lose2 = style.render('Right Player Loses!', True, (180, 0, 0))
 
 while game:
     for e in event.get():
@@ -72,3 +76,22 @@ while game:
         if sprite.collide_rect(left_paddle, ball) or sprite.collide_rect(right_paddle, ball):
             ball_speed_x *= -1
             ball_speed_y *= 1
+        if ball.rect.y > window_height - 50 or ball.rect.y < 0:
+            ball_speed_y *= -1
+        if ball.rect.x < 0:
+            finish = True
+            window.blit(lose1, (150, 200))
+            game_over = True
+        if ball.rect.x > window_width:
+            finish = True
+            window.blit(lose2, (150, 200))
+            game_over = True
+            
+        left_paddle.reset()
+        right_paddle.reset()
+        ball.reset()
+
+    display.update()
+    clock.tick(FPS)
+        
+
