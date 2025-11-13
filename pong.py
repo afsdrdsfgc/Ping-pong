@@ -59,8 +59,8 @@ ball = GameSprite('ball.jpg', 200, 200)
 
 font.init()
 style = font.Font(None, 35)
-lose1 = style.render('Left Player Loses!', True, (180, 0, 0))
-lose2 = style.render('Right Player Loses!', True, (180, 0, 0))
+lose1 = style.render('Player 1 Loses!', True, (180, 0, 0))
+lose2 = style.render('Player 2 Loses!', True, (180, 0, 0))
 
 while game:
     for e in event.get():
